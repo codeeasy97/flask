@@ -1,5 +1,6 @@
 #  How To setup Git Step wise Step
 ## Before start you must have any gmail Account
+
 # Step 1:
 1. Create a github account - https://github.com/
 2. After Login in Github Account -> Click on button create a new repositoty
@@ -14,6 +15,10 @@
 Https, SSH, Github CLI, and we will use SSH option to clone and push code
 
 # Step 2: Create a SSH key
+
+# See Image:
+![alt text](https://github.com/codeeasy97/flask/blob/main/images/git/github-key-generate.jpg?raw=true)
+
 1. Open your terminal and type ssh-keygen
 2. This will ask you 
     Enter file in which to save the key (/home/tech/.ssh/id_rsa):
@@ -35,6 +40,9 @@ Https, SSH, Github CLI, and we will use SSH option to clone and push code
 
 # Step 3: Where to copy this code?
 
+# See Image:
+![alt text](https://github.com/codeeasy97/flask/blob/main/images/git/github-step1.jpg?raw=true)
+
 1. Open your github account you have just created and log in if not.
 2. Go to top right corner of the page and click on profile icon.
 3. Click on setting option
@@ -46,6 +54,11 @@ Https, SSH, Github CLI, and we will use SSH option to clone and push code
 Now your SSH key has been saved
 
 # Step 4: Configure github Config
+
+# See Image: config file
+
+![alt text](https://github.com/codeeasy97/flask/blob/main/images/git/github-config.jpg?raw=true)
+
 1. open terminal and type : touch ~/.ssh/config
 2. Now open Create config file : sudo nano ~/.ssh/config
 3. Add Below code:
@@ -59,13 +72,14 @@ Host github.com-codeeasymulti
 Note: In IdentityFile "codeeasy_multi" is name which you have created to store public
 key in second step.
 
-# See Image: config file
-
-![alt text](https://github.com/codeeasy97/flask/blob/main/images/github-config.jpg?raw=true)
-
 4. Now Press Ctrl+s and Ctrl+x to save file and exit.
 
 # Step 5: Clone your project
+
+# See Image: config file
+
+![alt text](https://github.com/codeeasy97/flask/blob/main/images/git/github-clone.jpg?raw=true)
+
 1. open Github.com and login if not
 2. Click on your repository url on left side
 3. Click on Code button and copy SSH url
