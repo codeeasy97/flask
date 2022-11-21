@@ -34,7 +34,7 @@ Https, SSH, Github CLI, and we will use SSH option to clone and push code
 6. Copy generated key to github
 
 # Step 3: Where to copy this code?
-![alt text](https://github.com/codeeasy97/flask/blob/main/images/github-config.jpg?raw=true)
+
 1. Open your github account you have just created and log in if not.
 2. Go to top right corner of the page and click on profile icon.
 3. Click on setting option
@@ -58,6 +58,10 @@ Host github.com-codeeasymulti
 
 Note: In IdentityFile "codeeasy_multi" is name which you have created to store public
 key in second step.
+
+# See Image: config file
+
+![alt text](https://github.com/codeeasy97/flask/blob/main/images/github-config.jpg?raw=true)
 
 4. Now Press Ctrl+s and Ctrl+x to save file and exit.
 
