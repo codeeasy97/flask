@@ -1,10 +1,10 @@
 ![alt text][logo]
-[logo]: https://github.com/codeeasy97/flask/blob/main/static/youtubelogo.png "Code Easy"
+[logo]: https://github.com/codeeasy97/flask/blob/main/static/youtube/logo.png "Code Easy"
 
 #   Installation
 
-1.  Python Install Ubuntu/Linux And Windows
-###   video:  ![Click here](https://youtu.be/mv3ZJPGH7sM)
+##  1.  Python Install Ubuntu/Linux And Windows
+[![Click here video]](https://youtu.be/mv3ZJPGH7sM)
 
 2.  VSCode Install Ubuntu/Linux And Windows
 3.  Git Setup
