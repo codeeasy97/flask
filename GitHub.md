@@ -1,7 +1,8 @@
 #  How To setup Git Step wise Step
+
 ## Before start you must have any gmail Account
 
-# Step 1:
+## Step 1:
 1. Create a github account - https://github.com/
 2. After Login in Github Account -> Click on button create a new repositoty
 3. Eneter Repository name (choose any name related to your work)
@@ -14,9 +15,9 @@
 10. Now click on Code Button in your screen, and you will see three option
 Https, SSH, Github CLI, and we will use SSH option to clone and push code
 
-# Step 2: Create a SSH key
+## Step 2: Create a SSH key
 
-# See Image:
+### See Image:
 ![alt text](https://github.com/codeeasy97/flask/blob/main/images/git/github-key-1.jpg?raw=true)
 
 1. Open your terminal and type ssh-keygen
@@ -34,13 +35,16 @@ Https, SSH, Github CLI, and we will use SSH option to clone and push code
     It will generate a pub file like below
     Your public key has been saved in /home/tech/.ssh/codeeasy_multi.pub
 5. Now right a next command - (cat command)
-    cat /home/tech/.ssh/codeeasy_multi.pub (this is public key file path, your path can be different)
+    ```
+    cat /home/tech/.ssh/codeeasy_multi.pub
+    ```
+     (this is public key file path, your path can be different)
 
 6. Copy generated key to github
 
-# Step 3: Where to copy this code?
+## Step 3: Where to copy this code?
 
-# See Image:
+### See Image:
 ![alt text](https://github.com/codeeasy97/flask/blob/main/images/git/github-step1.jpg?raw=true)
 
 1. Open your github account you have just created and log in if not.
@@ -53,30 +57,31 @@ Https, SSH, Github CLI, and we will use SSH option to clone and push code
 8. Click on button Add SSH key
 Now your SSH key has been saved
 
-# Step 4: Configure github Config
+## Step 4: Configure github Config
 
-# See Image: config file
+### See Image: config file
 
 ![alt text](https://github.com/codeeasy97/flask/blob/main/images/git/github-config.jpg?raw=true)
 
 1. open terminal and type : touch ~/.ssh/config
 2. Now open Create config file : sudo nano ~/.ssh/config
 3. Add Below code:
+```
 #Account-4
 Host github.com-codeeasymulti
   HostName github.com
  # IgnoreUnknown UseKeychain
  # UseKeychain yes
   IdentityFile ~/.ssh/codeeasy_multi
-
+```
 Note: In IdentityFile "codeeasy_multi" is name which you have created to store public
 key in second step.
 
 4. Now Press Ctrl+s and Ctrl+x to save file and exit.
 
-# Step 5: Clone your project
+## Step 5: Clone your project
 
-# See Image: config file
+### See Image: config file
 
 ![alt text](https://github.com/codeeasy97/flask/blob/main/images/git/github-clone.jpg?raw=true)
 
@@ -84,7 +89,10 @@ key in second step.
 2. Click on your repository url on left side
 3. Click on Code button and copy SSH url
 4. Open terminal and type git clone <paste your copied url>
-Ex: git clone git@github.com:codeeasy97/flask.git
+Ex: 
+```
+git clone git@github.com:codeeasy97/flask.git
+```
 This will clone your project
 5. Go to your project folder -> right click -> choose open terminal
 6. Now you can open this project on your code editor (vscode)
