@@ -94,6 +94,7 @@ Ex:
 git clone git@github.com:codeeasy97/flask.git
 ```
 This will clone your project
+
 5. Go to your project folder -> right click -> choose open terminal
 6. Now you can open this project on your code editor (vscode)
 7. add or create any new file
