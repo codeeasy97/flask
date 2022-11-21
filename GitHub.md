@@ -17,7 +17,7 @@ Https, SSH, Github CLI, and we will use SSH option to clone and push code
 # Step 2: Create a SSH key
 
 # See Image:
-![alt text](https://github.com/codeeasy97/flask/blob/main/images/git/github-key-1.jpg.jpg?raw=true)
+![alt text](https://github.com/codeeasy97/flask/blob/main/images/git/github-key-1.jpg?raw=true)
 
 1. Open your terminal and type ssh-keygen
 2. This will ask you 
