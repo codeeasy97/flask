@@ -3,7 +3,7 @@
 #   Installation
 
 ##  1.  Install Python on Ubuntu/Linux And Windows
-<a href="https://youtu.be/mv3ZJPGH7sM" target="_blank">For video click here</a>
+<a href="https://youtu.be/mv3ZJPGH7sM" target="_blank" rel="noopener noreferrer">For video click here</a>
 
 ##  2.  VSCode Install Ubuntu/Linux And Windows
 ##  3.  Git Setup
