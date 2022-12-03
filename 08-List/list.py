@@ -34,8 +34,8 @@ list2 = [1,2,3,4,5]
 # for item in list2:
 #     print(item, end=" ")
 
-# for item in range(len(list2)):
-#     print(list2[item], end=" ")
+for item in range(len(list2)):
+    print(list2[item], end=" ")
 
 #while loop
 # [1,2,3,4,5]
