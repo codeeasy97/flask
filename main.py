@@ -8,11 +8,15 @@ def hello():
 
 @app.route("/about")
 def about():
-  return "Hello About!"
+  return render_template('about.html')
 
 @app.route("/contact")
 def contact():
   return render_template("contact.html")
+
+@app.route("/help")
+def help():
+  return render_template("help.html")
 
 if __name__ == "__main__":
   app.run()
