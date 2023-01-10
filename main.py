@@ -1,48 +1,32 @@
 from flask import Flask, render_template
+from views import main_view, cart_view, search_view, detail_view
 app = Flask(__name__)
 
-@app.route("/")
-def hello():
-  return render_template("home.html")
+app.add_url_rule("/",view_func=main_view.HomePageHander.as_view('home_page'))
+app.add_url_rule("/about",view_func=main_view.AboutPageHander.as_view('about_page'))
+app.add_url_rule("/contact",view_func=main_view.ContactPageHander.as_view('contact_page'))
+app.add_url_rule("/help",view_func=main_view.HelpPageHander.as_view('help_page'))
+app.add_url_rule("/faq",view_func=main_view.FaqPageHander.as_view('faq_page'))
 
-
-@app.route("/about")
-def about():
-  return render_template('about.html')
-
-@app.route("/contact")
-def contact():
-  return render_template("contact.html")
-
-@app.route("/help")
-def help():
-  return render_template("help.html")
-
-#faq page
-@app.route("/faq")
-def faq():
-  return render_template("faq.html")
-
-#cart page
-@app.route("/cart")
-def cart():
-  return render_template("cart.html")
-
-#checkout page
-@app.route("/checkout")
-def checkout():
-  return render_template("checkout.html")
+#cart
+app.add_url_rule("/cart",view_func=cart_view.CartPageHandler.as_view("cart_page"))
+app.add_url_rule("/checkout",view_func=cart_view.CheckoutPageHandler.as_view("checkout_page"))
 
 #product search page
-@app.route("/search")
-def search():
-  return render_template("search.html")
 
-#product detail page
-@app.route("/product-detail")
-def productDetail():
-  return render_template("product_detail.html")
+app.add_url_rule("/search",view_func=search_view.SearchPageHandler.as_view("search_page"))
 
+app.add_url_rule("/product-detail",view_func=detail_view.DetailPageHandler.as_view("detail_page"))
+
+#Registration page
+@app.route("/signup")
+def signup():
+  return render_template("signup.html")
+
+#login page
+@app.route("/login")
+def login():
+  return render_template("login.html")
 
 
 if __name__ == "__main__":
