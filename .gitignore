@@ -1,2 +1,8 @@
-*/__pycache__/*
 env
+__pycache__/
+images/git/mysql-connect-flask/
+images/git/mysql-install-img/
+models/
+resource/
+static/js/account.js
+templates/error/

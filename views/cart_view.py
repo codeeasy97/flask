@@ -9,3 +9,7 @@ class CartPageHandler(View):
 class CheckoutPageHandler(View):
     def dispatch_request(self):
         return render_template("checkout.html")
+
+class WishlistHandler(View):
+    def dispatch_request(self):
+        return render_template("wishlist.html")

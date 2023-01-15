@@ -23,6 +23,9 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="/static/css/style.css" rel="stylesheet">
     {% include 'layout/navbar.html' %}
+    {% block custom_style %}
+
+    {% endblock %}
 </head>
 <body>
     {% block content %}
@@ -47,6 +50,9 @@
 
     <!-- Template Javascript -->
     <script src="/static/js/main.js"></script>
-
+    
+    {% block scriptfiles %}
+    
+    {% endblock %}
 </body>
 </html>

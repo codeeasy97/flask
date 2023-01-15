@@ -1,5 +1,16 @@
 {% extends 'layout/base.html' %}
-
+{% block custom_style %}
+<style>
+.required-field::after {
+    content: "*";
+    color: red;
+}
+small{
+    color: red;
+    border-color: red;
+}
+</style>
+{% endblock %}
 {% block content %}
 <!-- Breadcrumb Start -->
 <div class="container-fluid">
@@ -19,36 +30,47 @@
         <div class="col-lg-8">
             <div class="bg-light p-30 mb-5">
                 <div class="row">
-                    <div class="col-md-6 form-group">
-                        <label>First Name</label>
-                        <input class="form-control" type="text" placeholder="First Name?">
-                    </div>
-                    <div class="col-md-6 form-group">
-                        <label>Last Name</label>
-                        <input class="form-control" type="text" placeholder="Last Name?">
-                    </div>
-                    <div class="col-md-6 form-group">
-                        <label>E-mail</label>
-                        <input class="form-control" type="text" placeholder="E-mail?">
-                    </div>
-                    <div class="col-md-6 form-group">
-                        <label>Mobile No</label>
-                        <input class="form-control" type="text" placeholder="Mobile?">
-                    </div>
-                    <div class="col-md-6 form-group">
-                        <label>Password</label>
-                        <input class="form-control" type="password" placeholder="Password?">
-                    </div>
-                    <div class="col-md-6 form-group">
-                        <label>Confirm Password</label>
-                        <input class="form-control" type="password" placeholder="Confirm?">
-                    </div>
-                    <div class="col-md-6 form-group">
-                        <button class="btn btn-primary py-2 px-4"><i class="fa fa-user p-10"></i> Create an account</button>
-                    </div>
+                    <form id="registration_form" method="post" class="row">
+                        <div class="col-md-6 form-group">
+                            <label class="required-field">First Name</label>
+                            <input id="first_name" name="first_name" class="form-control" type="text" placeholder="First Name?">
+                            <small id="firstNameHelp"></small>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>Last Name</label>
+                            <input id="last_name" name="last_name" class="form-control" type="text" placeholder="Last Name?">
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label class="required-field">E-mail</label>
+                            <input id="email" name="email" class="form-control" type="text" placeholder="E-mail?">
+                            <small id="emailHelp"></small>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label class="required-field">Mobile No</label>
+                            <input id="mobile" name="mobile" class="form-control" type="text" placeholder="Mobile?">
+                            <small id="mobileHelp"></small>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label class="required-field">Password</label>
+                            <input id="password" name="password" class="form-control" type="password" placeholder="Password?">
+                            <small id="passwordHelp"></small>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label class="required-field">Confirm Password</label>
+                            <input id="confirm_password" name="confirm_password" class="form-control" type="password" placeholder="Confirm?">
+                            <small id="confirmPasswordHelp"></small>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <button class="btn btn-primary py-2 px-4"><i class="fa fa-user p-10"></i> Create an account</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block scriptfiles %}
+    <script src="/static/js/signup.js"></script>
 {% endblock %}
