@@ -1,8 +1,10 @@
 env
 __pycache__/
 images/git/mysql-connect-flask/
-images/git/mysql-install-img/
 models/
-resource/
 static/js/account.js
 templates/error/
+views/account copy.py
+resource/database-connection.md
+resource/install-phpmyadmin.md
+resource/database-connection.md
