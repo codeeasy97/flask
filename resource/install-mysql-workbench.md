@@ -29,7 +29,8 @@ sudo snap install ./mysql-apt-config_0.8.22-1_all.deb
 ```
 
 #### Step7. A pop-up window appears asking which MySQL product to install. As the required product is preselected, scroll down to Ok and hit Enter to continue installing.
-![alt text](https://github.com/codeeasy97/flask/blob/main/images/git/mysql-workbench/5.jpg?raw=true)
+![alt text](https://github.com/codeeasy97/flask/blob/main/images/git/mysql-workbench/5.png?raw=true)
+
 Wait for the installation to complete.
 
 #### Step8: Then, update the apt cache to add the new repository source:
