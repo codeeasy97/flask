@@ -16,7 +16,7 @@
 ```
 cd ~/Downloads
 ls
-``
+```
 ![alt text](https://github.com/codeeasy97/flask/blob/main/images/git/mysql-workbench/4.jpg?raw=true)
 
 #### Step6: Next, add the official MySQL repository to the apt source list by running the command:
