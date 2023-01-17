@@ -80,7 +80,7 @@ if(form!=null){
         }
 
         if(is_form_data_valid == true){
-            // form.submit();
+            form.submit();
         }
 
     });

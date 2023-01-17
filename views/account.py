@@ -1,6 +1,6 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, flash, url_for, session
 from flask.views import View
-
+import re
 
 class SignupHandler(View):
     methods = ["GET", "POST"]
