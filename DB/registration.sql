@@ -2,7 +2,7 @@ CREATE DATABASE IF NOT EXISTS multi_db;
 
 CREATE TABLE IF NOT EXISTS accounts(id int(11) PRIMARY KEY AUTO_INCREMENT,
 first_name varchar(50),last_name varchar(50),
-email varchar(50),mobile varchar(10),
+email varchar(50),mobile varchar(30),
 password varchar(255),
 is_active tinyint,
 created_at datetime default CURRENT_TIMESTAMP,

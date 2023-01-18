@@ -81,4 +81,9 @@ def register():
   return render_template("signup.html")
 ```
 
+
+#### To kill port run below command(change port number)
+```
+sudo kill -9 $(sudo lsof -t -i:5000)
+```
 ### The END! You are successfully registered.

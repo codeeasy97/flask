@@ -1,11 +1,12 @@
-from flask import Flask, render_template, request, session, url_for, flash
+from flask import Flask, render_template, request, flash
 from views import main_view, cart_view, search_view, detail_view, account
 from flask_mysqldb import MySQL
 import MySQLdb.cursors
 import re
 
+
 app = Flask(__name__)
-app.secret_key = 'jhfiwerhe894rwhkfwgf93u2rjkbnhiuh@Hhejvwh'
+app.secret_key = 'ksdfjslfdsm898sdfdmfsmdf@Hhejvwh'
 
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
@@ -39,19 +40,17 @@ def register():
     password = request.form["password"]
     confirm_password = request.form["confirm_password"]
     print(first_name,last_name,email,mobile,password, confirm_password)
-    
     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
     cursor.execute('SELECT * FROM accounts WHERE email = %s', (email,))
     account = cursor.fetchone()
-    
     if account:
-        flash("'Account already exists!'","error")
+      flash("'Account already exists!'","error")
     else:
-        cursor.execute('INSERT INTO accounts(first_name,last_name, email, mobile, password) VALUES (%s, %s, %s, %s, %s)', (first_name, last_name, email, mobile, password))
-        mysql.connection.commit()
-        flash("You have successfully registered!","success")
+      cursor.execute('INSERT INTO accounts(first_name,last_name, email, mobile, password) VALUES (%s, %s, %s, %s, %s)', (first_name, last_name, email, mobile, password))
+      mysql.connection.commit()
+      flash("You have successfully registered!","success")
   return render_template("signup.html")
-
+  
 #account
 # app.add_url_rule("/signup",view_func=account.SignupHandler.as_view("signup_page"))
 app.add_url_rule("/login",view_func=account.LoginHandler.as_view("login_page"))
