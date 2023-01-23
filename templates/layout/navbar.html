@@ -13,15 +13,27 @@
         <div class="col-lg-6 text-center text-lg-right">
             <div class="d-inline-flex align-items-center">
                 <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">My Account</button>
-                    <!-- <div class="dropdown-menu dropdown-menu-right">
-                        <button class="dropdown-item" type="button">Sign in</button>
-                        <button class="dropdown-item" type="button">Sign up</button>
-                    </div> -->
-                    <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
-                        <a href="/login" class="dropdown-item">Sign in</a>
-                        <a href="/signup" class="dropdown-item">Sign up</a>
-                    </div>
+                    {% if session['is_authenticated'] %}
+                        <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">Hi, {{session['name']}}</button>
+                        <!-- <div class="dropdown-menu dropdown-menu-right">
+                            <button class="dropdown-item" type="button">Sign in</button>
+                            <button class="dropdown-item" type="button">Sign up</button>
+                        </div> -->
+                        <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
+                            <a href="/logout" class="dropdown-item">Logout</a>
+                        </div>
+                    {%else%}
+                        <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">My Account</button>
+                        <!-- <div class="dropdown-menu dropdown-menu-right">
+                            <button class="dropdown-item" type="button">Sign in</button>
+                            <button class="dropdown-item" type="button">Sign up</button>
+                        </div> -->
+                        <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
+                            <a href="/login" class="dropdown-item">Login</a>
+                            <a href="/signup" class="dropdown-item">Sign up</a>
+                        </div>
+                    {% endif %}
+                    
                 </div>
                 <div class="btn-group mx-2">
                     <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">USD</button>
