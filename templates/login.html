@@ -29,16 +29,28 @@ small{
         <div class="col-lg-8">
             <div class="bg-light p-30 mb-5">
                 <div class="row">
-                    <form id="login_form" class="row">
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                                {{ message }}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                    {% endwith %}
+                    <form id="login_form" method="post" class="row">
                         <div class="col-md-6 form-group">
                             <label>E-mail</label>
-                            <input class="form-control" id="loginemail" type="text" placeholder="E-mail?">
-                            <small></small>
+                            <input class="form-control" id="email" name="email" type="text" placeholder="E-mail?">
+                            <small id="emailHelp"></small>
                         </div>
                         <div class="col-md-6 form-group">
                             <label>Password</label>
-                            <input class="form-control" id="loginpassword" type="password" placeholder="Password?">
-                            <small></small>
+                            <input class="form-control" id="password" name="password" type="password" placeholder="Password?">
+                            <small id="passwordHelp"></small>
                         </div>
                         <div class="col-md-6 form-group">
                             <button class="btn btn-primary py-2 px-4"><i class="fa fa-user p-10"></i> Login</button>
@@ -51,5 +63,5 @@ small{
 </div>
 {% endblock %}
 {% block scriptfiles %}
-    <script src="/static/js/account.js"></script>
+    <script src="/static/js/login.js"></script>
 {% endblock %}
