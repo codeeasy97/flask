@@ -64,7 +64,10 @@ def login():
       cursor.execute('SELECT * FROM accounts WHERE email = %s and password=%s', (email,password))
       account = cursor.fetchone()
       if account:
+        session["is_authenticated"]  = True
+        session["name"] = account["first_name"]
         flash("You are successfully loggedin!", "success")
+        return redirect(url_for("profile_page"))
       else:
         flash("Your password is incorrect!", "danger")
     else:
@@ -74,6 +77,7 @@ def login():
 #account
 # app.add_url_rule("/signup",view_func=account.SignupHandler.as_view("signup_page"))
 # app.add_url_rule("/login",view_func=account.LoginHandler.as_view("login_page"))
+app.add_url_rule("/logout",view_func=account.LogoutHandler.as_view("logout_page"))
 app.add_url_rule("/profile",view_func=account.ProfileHandler.as_view("profile_page"))
 
 if __name__ == "__main__":

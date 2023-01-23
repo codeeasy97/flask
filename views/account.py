@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, session
+from flask import Flask, render_template, redirect, url_for, session
 from flask.views import View
 import re
 
@@ -14,3 +14,11 @@ class LoginHandler(View):
 class ProfileHandler(View):
     def dispatch_request(self):
         return render_template("account/profile.html")
+
+class LogoutHandler(View):
+    def dispatch_request(self):
+        session["is_authenticated"] = None
+        session["name"] = None
+        del session["is_authenticated"]
+        del session["name"]
+        return redirect(url_for("home_page"))
