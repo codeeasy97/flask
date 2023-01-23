@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, flash
+from flask import Flask, render_template, request, flash, session, redirect, url_for
 from views import main_view, cart_view, search_view, detail_view, account
 from flask_mysqldb import MySQL
 import MySQLdb.cursors
@@ -35,8 +35,8 @@ def register():
   if request.method == "POST":
     first_name = request.form["first_name"]
     last_name = request.form["last_name"]
-    email = request.form["mobile"]
-    mobile = request.form["email"]
+    email = request.form["email"]
+    mobile = request.form["mobile"]
     password = request.form["password"]
     confirm_password = request.form["confirm_password"]
     print(first_name,last_name,email,mobile,password, confirm_password)
@@ -44,17 +44,37 @@ def register():
     cursor.execute('SELECT * FROM accounts WHERE email = %s', (email,))
     account = cursor.fetchone()
     if account:
-      flash("'Account already exists!'","error")
+      flash("Account already exists!","danger")
     else:
       cursor.execute('INSERT INTO accounts(first_name,last_name, email, mobile, password) VALUES (%s, %s, %s, %s, %s)', (first_name, last_name, email, mobile, password))
       mysql.connection.commit()
       flash("You have successfully registered!","success")
   return render_template("signup.html")
-  
+
+
+@app.route("/login", methods=["GET","POST"])
+def login():
+  if request.method == "POST":
+    email = request.form['email']
+    password = request.form['password']
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor.execute('SELECT * FROM accounts WHERE email = %s', (email,))
+    check_email = cursor.fetchone()
+    if check_email:
+      cursor.execute('SELECT * FROM accounts WHERE email = %s and password=%s', (email,password))
+      account = cursor.fetchone()
+      if account:
+        flash("You are successfully loggedin!", "success")
+      else:
+        flash("Your password is incorrect!", "danger")
+    else:
+      flash("You are not registered with us!", "danger")
+  return render_template("login.html")
+
 #account
 # app.add_url_rule("/signup",view_func=account.SignupHandler.as_view("signup_page"))
-app.add_url_rule("/login",view_func=account.LoginHandler.as_view("login_page"))
-
+# app.add_url_rule("/login",view_func=account.LoginHandler.as_view("login_page"))
+app.add_url_rule("/profile",view_func=account.ProfileHandler.as_view("profile_page"))
 
 if __name__ == "__main__":
   app.run()
